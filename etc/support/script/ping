@@ -1,0 +1,6 @@
+#!/bin/bash
+## Пингуем восьмёрки
+PING6=$(ping -c 2 8.8.8.8  | head -n4 | awk {'print $4, $5, $6, $7, $8'} | sed '1d' )
+ROUTE=$(ip ro | head -n2)
+zenity --info --text "Маршрут \n $ROUTE \n Доступность интернета  \n $PING6"
+exit 0

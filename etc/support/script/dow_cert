@@ -1,0 +1,9 @@
+#!/bin/bash
+cd /tmp
+## включаем прокси если нужно
+# export http{,s}_proxy=http://user:port@proxy_url:port
+## вгетаем сертификат для openvpn
+wget http://127.0.0.1/client.conf
+## перемещаем его в папку openvpn
+pkexec mv /tmp/client.conf /etc/openvpn/
+exit 0

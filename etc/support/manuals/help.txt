@@ -1,0 +1,9 @@
+pkexec sakis3g
+su
+ip  a
+ip  ro
+ifconfig
+lsusb
+ifconfig  eth1  up
+dhclient  -nw  eth1
+dhclient  -nw  usb0

@@ -1,0 +1,57 @@
+#!/usr/bin/python
+# coding: utf8
+import Tkinter
+import os
+import tkMessageBox
+
+top = Tkinter.Tk()
+
+def list_interface_back():
+    p = os.popen('/etc/support/script/list_interface')
+def ping_back():
+    p = os.popen('/etc/support/script/ping')
+def model_modem_back():
+    p = os.popen('/etc/support/script/model_modem')
+def start_vpn_back():
+    p = os.popen('systemctl start openvpn@client')
+def restart_vpn_back():
+    p = os.popen('systemctl restart openvpn@client')
+def stop_vpn_back():
+    p = os.popen('systemctl stop openvpn@client')
+def avail_cert_back():
+    p = os.popen('/etc/support/script/avail_cert')
+def dow_cert_back():
+    p = os.popen('/etc/support/script/dow_cert')
+def terminal():
+	p = os.popen('xfce4-terminal&')
+def help():
+	p = os.popen('zenity --text-info --title="Подсказки" --filename=/etc/support/manuals/help.txt')
+l1 = Tkinter.Label(top, text="Техподдержка")
+l2 = Tkinter.Label(top, text="8-800-000-00-00")
+l3 = Tkinter.Label(top, text="support@domain.ru")
+l4 = Tkinter.Label(top, text="")
+B1 = Tkinter.Button(top, width=20,height=1, bg='white',fg='black',font='arial 12',  text ="Список интерфейсов", command = list_interface_back)
+B2 = Tkinter.Button(top, width=20,height=1, bg='white',fg='black',font='arial 12',  text ="Пинг", command = ping_back)
+B3 = Tkinter.Button(top, width=20,height=1, bg='white',fg='black',font='arial 12',  text ="Модель модема", command = model_modem_back)
+B4 = Tkinter.Button(top, width=20,height=1, bg='white',fg='black',font='arial 12',  text ="Старт ВПН", command = start_vpn_back)
+B5 = Tkinter.Button(top, width=20,height=1, bg='white',fg='black',font='arial 12',  text ="Рестарт ВПН", command = restart_vpn_back)
+B6 = Tkinter.Button(top, width=20,height=1, bg='white',fg='black',font='arial 12',  text ="Стоп ВПН", command = stop_vpn_back)
+B7 = Tkinter.Button(top, width=20,height=1, bg='white',fg='black',font='arial 12',  text ="Наличие сертификата", command = avail_cert_back)
+B8 = Tkinter.Button(top, width=20,height=1, bg='white',fg='black',font='arial 12',  text ="Получить сертификат", command = dow_cert_back)
+B9 = Tkinter.Button(top, width=20,height=1, bg='white',fg='black',font='arial 12',  text ="Терминал", command = terminal)
+B10 = Tkinter.Button(top, width=20,height=1, bg='white',fg='black',font='arial 12',  text ="Подсказка", command = help)
+l1.pack()
+l2.pack()
+l3.pack()
+l4.pack()
+B2.pack()
+B1.pack()
+B3.pack()
+B7.pack()
+B4.pack()
+B5.pack()
+B6.pack()
+B8.pack()
+B9.pack()
+B10.pack()
+top.mainloop()

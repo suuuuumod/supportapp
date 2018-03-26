@@ -1,0 +1,8 @@
+#!/bin/bash
+chmod +x etc/support/script/avail_cert
+chmod +x etc/support/script/dow_cert
+chmod +x etc/support/script/list_interface
+chmod +x etc/support/script/model_modem
+chmod +x etc/support/script/ping
+chmod +x usr/local/bin/support
+dpkg -b . support.deb

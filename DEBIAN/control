@@ -1,0 +1,7 @@
+Package: support
+Pre-Depends: python-tk
+Version: 1.1
+Maintainer: support
+Architecture: amd64
+Priority: extra
+Description: support team

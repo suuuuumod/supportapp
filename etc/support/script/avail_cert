@@ -1,0 +1,10 @@
+#!/bin/bash
+## Проверяем наличие сертификата на ПК, в папке openvpn
+AVAIL=$(ls /etc/openvpn/)
+if [ -f /etc/openvpn/client.conf ]
+then
+	zenity --info --text "Имеется файл $AVAIL"
+else 
+	zenity --error --text "Сертификат не найден"
+fi
+exit 0

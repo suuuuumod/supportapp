@@ -1,0 +1,10 @@
+#!/bin/bash
+## Проверяем наличие LTE модема в USB порту
+MODEL=$(lsusb | awk '$7~/Hua|ZTE|Sam/ {print $6"\t\t" s7}')
+MODEL2=$(lsusb | awk '$7~/Hua|ZTE|Sam/ {print  $7}')
+if [ $MODEL="" ]
+	then zenity --error --text "Модем не найден"
+	else zenity --list --title="Модель модема" --column="$MODEL" \
+	"$MODEL2"
+fi
+exit 0

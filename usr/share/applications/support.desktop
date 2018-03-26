@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Техподдержка
+Comment=
+GenericName=
+Keywords=
+Exec=support
+Terminal=false
+Type=Application
+Icon=applications-utilities
+Path=
+Categories=GNOME;GTK;Utility;Core;FileManager;

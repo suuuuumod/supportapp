@@ -1,0 +1,22 @@
+#!/bin/bash
+## Показываем интерфейсы
+INTER=$(ifconfig |\
+	awk '{print $1}' |\
+	grep -v RX |\
+	grep -v TX |\
+	grep -v inet |\
+	grep -v inet6 |\
+	grep -v loop |\
+	grep -v ether |\
+	grep -v colli* |\
+	grep -v "^$" |\
+	sed 's/^/   /' |\
+	sed ':a; /$/N; s/\n//; ta'|\
+	sed s/UP/Работает/g |\
+	sed s/DOWN/'Не работает'/g)
+LISTIN=$(ifconfig |\
+	awk '/inet addr/{split($2,a,":"); print a[2]}'|\
+	sed 's/^/   /' |\
+	sed ':a; /$/N; s/\n//; ta' )
+zenity --info --text "$INTER  \n $LISTIN"
+exit 0
